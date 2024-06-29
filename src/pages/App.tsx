@@ -1,22 +1,11 @@
 import '../style/global.css';
 import { Switch } from "@/components/ui/switch";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
-import {
   Menubar,
-  MenubarContent,
-  MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar"
 
-import { background } from "@/components/ui/background"
 import { useEffect, useState } from 'react';
 
 import { Button } from "@/components/ui/button"
@@ -32,7 +21,7 @@ import {
 
 function App() {
   // Adicionando um estado para controlar o idioma selecionado
-  const [idioma, setIdioma] = useState(''); // Defina o idioma padrão
+  /* const [idioma, setIdioma] = useState(''); */ // Defina o idioma padrão
 
   // Estado para o switch
   const [check, setCheck] = useState(Boolean);
