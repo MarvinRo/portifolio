@@ -107,118 +107,139 @@ function App() {
     });
   };
 
+  const FullName= import.meta.env.VITE_API_FULL_NAME;
+  const Linkedin= import.meta.env.VITE_API_LIKEDIN_LINK;
+  const Email= import.meta.env.VITE_API_EMAIL;
+  const Email_link= import.meta.env.VITE_API_EMAIL_LINK;
+  const GitName = import.meta.env.VITE_API_GIT_NAME;
+  const Git_Link= import.meta.env.VITE_API_GIT_LINK;
+
+
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme" >
       <div className="text-foreground dark:bg-background dark:text-foreground">
-        <section id="apresentacao" className="  w-[98%] flex flex-col items-center justify-center mx-auto">
-          <div className='flex w-full justify-between items-center'>
-            <div className="">
-              <NavegacaoBar />
-            </div>
-
-            <div className="flex space-x-2 items-center ">
-              <img src="../../public/img/brazil_5111560.png" alt="PT-BR" />
-              <Switch
-                className={
-                  check
-                    ? 'border-[0.2px]  bg-gradient-to-r from-[#B22234] via-[#FFFFFF] to-[#3C3B6E] p-[2px] '
-                    : 'border-1 bg-gradient-to-r from-[#009440] to-[#ffcb00] p-[2px]'
-                }
-                onCheckedChange={() => setCheck(!check)}
-              />
-              <img src="../../public/img/estados-unidos.png" alt="EN" />
-
-              <ModeToggle />
-
-            </div>
+        <div className='flex w-full justify-between items-center'>
+          <div className="">
+            <NavegacaoBar />
           </div>
-          <div className="md:container md:mx-auto h-8">
 
+          <div className="flex space-x-2 items-center ">
+            <img src="../../public/img/brazil_5111560.png" alt="PT-BR" />
+            <Switch
+              className={
+                check
+                  ? 'border-[0.2px]  bg-gradient-to-r from-[#B22234] via-[#FFFFFF] to-[#3C3B6E] p-[2px] '
+                  : 'border-1 bg-gradient-to-r from-[#009440] to-[#ffcb00] p-[2px]'
+              }
+              onCheckedChange={() => setCheck(!check)}
+            />
+            <img src="../../public/img/estados-unidos.png" alt="EN" />
+
+            <ModeToggle />
+
+          </div>
+        </div>
+
+        <section id="apresentacao" className=" w-[98%] h-[100vh] flex flex-col items-center justify-center mx-auto">
+          <div className="md:container md:mx-auto flex">
+            <img src="" alt="" className="bg-foreground rounded-full w-[300px] h-[300px] p-0 " />
+            <h1 className="text-center text-4xl font-bold text-foreground dark:bg-background dark:text-foreground">
+              <span className="font-bold">Marvin Rocha</span>
+            </h1>
           </div>
           <div className="flex md:mx-auto justify-center align-middle">
             <p className=' w-[90%] text-justify md:text-lg'>
-              Olá! Eu sou Marvin Rocha, um desenvolvedor que adora misturar criatividade com tecnologia para criar algo especial. Trabalhar com HTML, CSS, JavaScript e React Js/Native é como minha segunda natureza, mas o que realmente me motiva é a oportunidade de resolver problemas de maneiras inovadoras. Meu portfólio é como um diário das minhas aventuras de codificação, mostrando não apenas o que construí, mas também a paixão e o empenho que coloquei em cada projeto. Estou sempre disposto a ouvir novas ideias e colaborar em projetos interessantes, então, se você tem algo em mente, vamos conversar! Estou animado para ver onde nossa jornada nos levará.
+              Sou um desenvolvedor Jr. que adora misturar criatividade com tecnologia para criar algo especial. Trabalhar com HTML, CSS, JavaScript e React Js/Native é como minha segunda natureza, mas o que realmente me motiva é a oportunidade de resolver problemas de maneiras inovadoras. Meu portfólio é como um diário das minhas aventuras de codificação, mostrando não apenas o que construí, mas também a paixão e o empenho que coloquei em cada projeto. Estou sempre disposto a ouvir novas ideias e colaborar em projetos interessantes, então, se você tem algo em mente, vamos conversar! Estou animado para ver onde nossa jornada nos levará.
             </p>
           </div>
         </section>
 
 
-        <section id="experiencia" className="mt-3 md:mx-auto flex flex-col items-center justify-center " >
-          <Carousel className='w-[70%] my-auto dark:bg-popover rounded-lg'>
-            <CarouselContent >
-              <CarouselItem className='flex justify-center' >
-                <h1 className=''>AADC (Agência Amazonence de Desenvolvimento Cultural)</h1>
-                <ul>
-                  <li>
-                    <p className=' text-justify'>
-                      Desenvolvimento e manutenção de sistemas web e mobile.
-                    </p>
-                  </li>
-                  <li>
-                    <p className=' text-justify'>
-                      Desenvolvimento e manutenção de sistemas web e mobile.
-                    </p>
-                  </li>
-                </ul>
-              </CarouselItem>
-              <CarouselItem>
-                <h1 className=' '>Ferragens Paraiba</h1>
-                <ul>
-                  <li>
-                    <p className=' text-justify'>
-                      Desenvolvimento e manutenção de sistemas web e mobile.
-                    </p>
-                  </li>
-                  <li>
-                    <p className=' text-justify'>
-                      Desenvolvimento e manutenção de sistemas web e mobile.
-                    </p>
-                  </li>
-                </ul>
-              </CarouselItem>
-              <CarouselItem> <h1 className=' '>ICTS (Instituto Centro de Tecnologia e Software)</h1>
-                <ul>
-                  <li>
-                    <p className=' text-justify'>
-                      Desenvolvimento e manutenção de sistemas web e mobile.
-                    </p>
-                  </li>
-                  <li>
-                    <p className=' text-justify'>
-                      Desenvolvimento e manutenção de sistemas web e mobile.
-                    </p>
-                  </li>
-                </ul></CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <section id="experiencia" className="mt-3 h-[100vh] flex flex-col justify-center " >
+          <div className="ml-5">
+            <h1 className=" text-xl">
+              Experiências
+            </h1>
+          </div>
+          <div className="flex justify-center">
+            <Carousel className='w-[70%] my-auto dark:bg-popover rounded-lg'>
+              <CarouselContent >
+                <CarouselItem className='flex justify-center' >
+                  <h1 className=''>AADC (Agência Amazonence de Desenvolvimento Cultural)</h1>
+                  <ul>
+                    <li>
+                      <p className=' text-justify'>
+                        Desenvolvimento e manutenção de sistemas web e mobile.
+                      </p>
+                    </li>
+                    <li>
+                      <p className=' text-justify'>
+                          Nome Completo:{FullName}
+                      </p>
+                    </li>
+                  </ul>
+                </CarouselItem>
+                <CarouselItem>
+                  <h1 className=' '>Ferragens Paraiba</h1>
+                  <ul>
+                    <li>
+                      <p className=' text-justify'>
+                        Desenvolvimento e manutenção de sistemas web e mobile.
+                        
+                      </p>
+                    </li>
+                    <li>
+                      <p className=' text-justify'>
+                        Desenvolvimento e manutenção de sistemas web e mobile.
+                      </p>
+                    </li>
+                  </ul>
+                </CarouselItem>
+                <CarouselItem> <h1 className=' '>ICTS (Instituto Centro de Tecnologia e Software)</h1>
+                  <ul>
+                    <li>
+                      <p className=' text-justify'>
+                        Desenvolvimento e manutenção de sistemas web e mobile.
+                      </p>
+                    </li>
+                    <li>
+                      <p className=' text-justify'>
+                        Desenvolvimento e manutenção de sistemas web e mobile.
+                      </p>
+                    </li>
+                  </ul></CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+
+          </div>
         </section>
-        <section id="projetos" className=" flex items-center md:mx-auto mt-3">
+
+        <section id="projetos" className=" h-[100vh] w-[98%] flex items-center md:mx-auto mt-3">
           <div className="md:mx-auto flex items-center">
 
           </div>
         </section>
 
         <section id="contato" className="flex items-center mt-3">
-          <div className="flex items-center fixed left-1/2 transform -translate-x-1/2 bottom-4 md:bottom-3">
-            <a href="https://www.linkedin.com/in/marvin-rocha-84b28714a/" target="_blank" rel="noopener noreferrer" className="flex items-center mr-2 md:text-xm">
+          <div className="flex items-center mx-auto md:bottom-0">
+            <a href={Linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center mr-2 md:text-xm">
               <ImLinkedin className="md:w-8 md:h-8 mr-2" />
-              Marvin Rocha
+              {FullName}
             </a>
-            <a href="https://github.com/MarvinRo" target="_blank" rel="noopener noreferrer" className="flex items-center mr-2 md:text-xm">
+            <a href={Git_Link} target="_blank" rel="noopener noreferrer" className="flex items-center mr-2 md:text-xm">
               <VscGithub className="md:w-8 md:h-8 mr-2" />
-              MarvinRo
+              {GitName}
             </a>
-            <a href="mailto:marvins.rocha@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center md:text-xm">
+            <a href={Email_link} target="_blank" rel="noopener noreferrer" className="flex items-center md:text-xm">
               <TbMailFilled className="md:w-8 md:h-8 mr-2" />
-              marvins.rocha@gmail.com
+              {Email}
             </a>
           </div>
         </section>
 
-
-        <div style={{ position: 'fixed', bottom: '20px', right: '30px', display: showButton ? 'block' : 'none', zIndex: '999' }}>
+        <div className={showButton ? 'fixed bottom-4 right-4 z-50 inline-block' : 'none'}>
           <Button variant="outline" size="icon" className="rounded-full" onClick={scrollToTop}>
             <ChevronUpIcon className="h-4 w-4" />
           </Button>

@@ -71,4 +71,8 @@
       color:var(--houver)
       /* Defina outras propriedades conforme necessário */
     }
+    .dark .background-perfil {
+      background: hsl(var(--background-perfil));
+      /* Defina outras propriedades conforme necessário */
+    }
   }
