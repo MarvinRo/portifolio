@@ -24,12 +24,22 @@ import {
   SelectGroup,
   SelectItem,
 } from "@radix-ui/react-select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import TypeIt from "typeit-react"
 import { ImLinkedin } from "react-icons/im";
 import { VscGithub } from "react-icons/vsc";
 import { TbMailFilled } from "react-icons/tb";
 import { VscThreeBars } from "react-icons/vsc";
 import { BsWhatsapp } from "react-icons/bs";
+import { IoIosSchool } from "react-icons/io";
+import { MdOutlineMoreTime } from "react-icons/md";
 
 function App() {
   const [check, setCheck] = useState(false);
@@ -171,12 +181,42 @@ function App() {
             <p className=' w-[90%] text-justify md:text-lg'>
               Sou um desenvolvedor Jr. que adora misturar criatividade com tecnologia para criar algo especial. Trabalhar com HTML, CSS, JavaScript e React Js/Native é como minha segunda natureza, mas o que realmente me motiva é a oportunidade de resolver problemas de maneiras inovadoras. Meu portfólio é como um diário das minhas aventuras de codificação, mostrando não apenas o que construí, mas também a paixão e o empenho que coloquei em cada projeto. Estou sempre disposto a ouvir novas ideias e colaborar em projetos interessantes, então, se você tem algo em mente, vamos conversar! Estou animado para ver onde nossa jornada nos levará.
             </p>
-            
+
           </div>
         </section>
 
 
         <section id="experiencia" className="mt-3 h-[100vh] flex flex-col justify-center " >
+          <div className="flex justify-center align-middle items-center space-x-8">
+            <div>
+              <Card >
+                <CardHeader >
+                  <CardTitle className="text-foreground flex justify-center"><MdOutlineMoreTime /></CardTitle>
+                  <CardDescription className="text-foreground flex justify-center">Experiência</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground flex justify-center">+1 ano</p>
+                </CardContent>
+                <CardFooter>
+                  <p className="text-foreground flex justify-center">Desenvolvedor Frontend</p>
+                </CardFooter>
+              </Card>
+            </div>
+            <div>
+            <Card>
+                <CardHeader>
+                  <CardTitle className=" text-foreground flex justify-center"><IoIosSchool/></CardTitle>
+                  <CardDescription className="text-foreground flex justify-center">Formação</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground">Facudade do norte (Uninorte)</p>
+                </CardContent>
+                <CardFooter>
+                  <p className="text-foreground flex justify-center mx-auto">2016-2021</p>
+                </CardFooter>
+              </Card>
+            </div>
+          </div>
           <div className="ml-5 mb-12">
             <h1 className="text-3xl">
               Experiências
