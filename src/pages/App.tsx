@@ -28,6 +28,7 @@ import { ImLinkedin } from "react-icons/im";
 import { VscGithub } from "react-icons/vsc";
 import { TbMailFilled } from "react-icons/tb";
 import { VscThreeBars } from "react-icons/vsc";
+import { BsWhatsapp } from "react-icons/bs";
 
 function App() {
   const [check, setCheck] = useState(false);
@@ -67,9 +68,17 @@ function App() {
   }, []);
 
   const NavegacaoBar = () => {
+
+    const handleSelectChange = (value: string) => {
+      const section = document.querySelector(`#${value}`);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
     const screen = useScreenSize();
-  
-    if (screen.width > 768) {
+
+    if (screen.width > 767) {
       return (
         <Menubar className='flex align-middle mx-auto border-none w-auto bg-[#1f1f1f]'>
           <MenubarMenu>
@@ -82,12 +91,12 @@ function App() {
       );
     } else {
       return (
-        <Select >
+        <Select onValueChange={handleSelectChange}>
           <SelectTrigger className="mt-1 mb-0 w-auto rounded-md dark:bg-button-dark">
             <VscThreeBars className="w-8 h-8" />
           </SelectTrigger>
           <SelectContent>
-            <SelectGroup className="p-2 border-[0.2px] rounded-md md:mx-auto space-y-2 text-white">
+            <SelectGroup className="p-2 border-[0.2px] rounded-md md:mx-auto space-y-2 text-foreground dark:bg-[#1f1f1f] bg-background">
               <SelectItem value="apresentacao"><a href="#apresentacao">Apresentação</a></SelectItem>
               <SelectItem value="experiencia"><a href="#experiencia">Experiência</a></SelectItem>
               <SelectItem value="projetos"><a href="#projetos">Projetos</a></SelectItem>
@@ -98,7 +107,7 @@ function App() {
       );
     }
   };
-  
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -112,7 +121,8 @@ function App() {
   const Email_link = import.meta.env.VITE_API_EMAIL_LINK;
   const GitName = import.meta.env.VITE_API_GIT_NAME;
   const Git_Link = import.meta.env.VITE_API_GIT_LINK;
-
+  const Phone = import.meta.env.VITE_API_PHONE;
+  const Phone_Link = import.meta.env.VITE_API_PHONE_LINK;
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme" >
@@ -138,10 +148,11 @@ function App() {
 
           </div>
         </div>
-        <section className="h-[100vh] m-0 p-0 flex items-center justify-center bg-[#1f1f1f]">
-          <div className={useScreenSize().width > 768 ? "mx-auto flex" : 'flex flex-col'}>
-            <img src="" alt="" className="bg-white rounded-full w-[300px] h-[300px] p-0 " />
-            <h1 className="text-center text-4xl font-bold text-[#ffff]">
+        <section className="h-[100vh] m-0 p-0 flex bg-[#1f1f1f]">
+          <div className={useScreenSize().width > 768 ? " flex my-auto ml-[200px]" : 'flex flex-col mx-auto'}>
+            <img src="../../public/img/perfil.png" alt="" className="w-[450px] h-[450px] rounded-sm -z-2 object-contain " />
+
+            <h1 className={useScreenSize().width > 768 ? " mt-[70px] text-center text-4xl font-bold text-[#ffff]" : 'text-center text-4xl font-bold text-[#ffff]'}>
               <span className="font-bold">Marvin Rocha</span>
             </h1>
           </div>
@@ -156,28 +167,22 @@ function App() {
 
 
         <section id="experiencia" className="mt-3 h-[100vh] flex flex-col justify-center " >
-          <div className="ml-5">
-            <h1 className=" text-xl">
+          <div className="ml-5 mb-12">
+            <h1 className="text-3xl">
               Experiências
             </h1>
           </div>
           <div className="flex justify-center">
-            <Carousel className='w-[70%] my-auto dark:bg-popover rounded-lg'>
+            <Carousel className='w-[70%]  bg-popover dark:bg-popover rounded-lg'>
               <CarouselContent >
-                <CarouselItem className='flex flex-col justify-center' >
+                <CarouselItem className='flex flex-col justify-center items-center my-6 md:text-xs text-justify space-y-6 mx-2' >
                   <h1 className=''>AADC (Agência Amazonence de Desenvolvimento Cultural)</h1>
-                  <ul>
-                    <li>
-                      <p className=' text-justify'>
-                        Desenvolvimento e manutenção de sistemas web e mobile.
-                      </p>
-                    </li>
-                    <li>
-                      <p className=' text-justify'>
-                        Desenvolvimento e manutenção de sistemas web e mobile.
-                      </p>
-                    </li>
-                  </ul>
+                  <p className=' text-justify'>
+                    Desenvolvimento e manutenção de sistemas web e mobile.
+                  </p>
+                  <p className=' text-justify'>
+                    Desenvolvimento e manutenção de sistemas web e mobile.
+                  </p>
                 </CarouselItem>
                 <CarouselItem className='flex flex-col justify-center'>
                   <h1 className=' '>Ferragens Paraiba</h1>
@@ -223,7 +228,7 @@ function App() {
         </section>
 
         <section id="contato" className="flex items-center mt-3">
-          <div className={useScreenSize().width > 768 ? 'flex items-center mx-auto md:bottom-0' : 'flex items-center justify-center flex-col mx-auto'}>
+          <div className={useScreenSize().width > 767 ? 'flex items-center mx-auto md:bottom-0' : 'flex items-start justify-center flex-col ml-3 '}>
             <a href={Linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center mr-2 md:text-xm">
               <ImLinkedin className="md:w-8 md:h-8 mr-2" />
               {FullName}
@@ -232,9 +237,13 @@ function App() {
               <VscGithub className="md:w-8 md:h-8 mr-2" />
               {GitName}
             </a>
-            <a href={Email_link} target="_blank" rel="noopener noreferrer" className="flex items-center md:text-xm">
+            <a href={Email_link} target="_blank" rel="noopener noreferrer" className="flex items-center mr-2 md:text-xm">
               <TbMailFilled className="md:w-8 md:h-8 mr-2" />
               {Email}
+            </a>
+            <a href={Phone_Link} target="_blank" rel="noopener noreferrer" className="flex items-center md:text-xm">
+              <BsWhatsapp className="md:w-8 md:h-8 mr-2" />
+              {Phone}
             </a>
           </div>
         </section>
@@ -244,8 +253,8 @@ function App() {
             <ChevronUpIcon className="h-4 w-4" />
           </Button>
         </div>
-      </div>
-    </ThemeProvider>
+      </div >
+    </ThemeProvider >
   );
 }
 
