@@ -1,10 +1,12 @@
-@tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  .max-w-screen-lg {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
  
 @layer base {

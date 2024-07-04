@@ -20,10 +20,8 @@ import {
 import {
   Select,
   SelectTrigger,
-  SelectValue,
   SelectContent,
   SelectGroup,
-  SelectLabel,
   SelectItem,
 } from "@radix-ui/react-select";
 import { ImLinkedin } from "react-icons/im";
@@ -107,17 +105,17 @@ function App() {
     });
   };
 
-  const FullName= import.meta.env.VITE_API_FULL_NAME;
-  const Linkedin= import.meta.env.VITE_API_LIKEDIN_LINK;
-  const Email= import.meta.env.VITE_API_EMAIL;
-  const Email_link= import.meta.env.VITE_API_EMAIL_LINK;
+  const FullName = import.meta.env.VITE_API_FULL_NAME;
+  const Linkedin = import.meta.env.VITE_API_LIKEDIN_LINK;
+  const Email = import.meta.env.VITE_API_EMAIL;
+  const Email_link = import.meta.env.VITE_API_EMAIL_LINK;
   const GitName = import.meta.env.VITE_API_GIT_NAME;
-  const Git_Link= import.meta.env.VITE_API_GIT_LINK;
+  const Git_Link = import.meta.env.VITE_API_GIT_LINK;
 
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme" >
-      <div className="text-foreground dark:bg-background dark:text-foreground">
+      <div className="text-foreground dark:bg-background dark:text-foreground max-w-screen-lg mx-auto">
         <div className='flex w-full justify-between items-center'>
           <div className="">
             <NavegacaoBar />
@@ -139,14 +137,15 @@ function App() {
 
           </div>
         </div>
-
-        <section id="apresentacao" className=" w-[98%] h-[100vh] flex flex-col items-center justify-center mx-auto">
+        <section className="h-[100vh] m-0 p-0 flex items-center justify-center">
           <div className="md:container md:mx-auto flex">
             <img src="" alt="" className="bg-foreground rounded-full w-[300px] h-[300px] p-0 " />
             <h1 className="text-center text-4xl font-bold text-foreground dark:bg-background dark:text-foreground">
               <span className="font-bold">Marvin Rocha</span>
             </h1>
           </div>
+        </section>
+        <section id="apresentacao" className=" w-[98%] h-[100vh] flex flex-col items-center justify-center mx-auto">
           <div className="flex md:mx-auto justify-center align-middle">
             <p className=' w-[90%] text-justify md:text-lg'>
               Sou um desenvolvedor Jr. que adora misturar criatividade com tecnologia para criar algo especial. Trabalhar com HTML, CSS, JavaScript e React Js/Native é como minha segunda natureza, mas o que realmente me motiva é a oportunidade de resolver problemas de maneiras inovadoras. Meu portfólio é como um diário das minhas aventuras de codificação, mostrando não apenas o que construí, mas também a paixão e o empenho que coloquei em cada projeto. Estou sempre disposto a ouvir novas ideias e colaborar em projetos interessantes, então, se você tem algo em mente, vamos conversar! Estou animado para ver onde nossa jornada nos levará.
@@ -174,7 +173,7 @@ function App() {
                     </li>
                     <li>
                       <p className=' text-justify'>
-                          Nome Completo:{FullName}
+                        Nome Completo:{FullName}
                       </p>
                     </li>
                   </ul>
@@ -185,7 +184,7 @@ function App() {
                     <li>
                       <p className=' text-justify'>
                         Desenvolvimento e manutenção de sistemas web e mobile.
-                        
+
                       </p>
                     </li>
                     <li>
