@@ -1,13 +1,6 @@
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-
-  .max-w-screen-lg {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
  
 @layer base {
   :root {
@@ -53,8 +46,8 @@
     --destructive-foreground: 0 85.7% 97.3%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --button: 142 71% 45%;
-    --button-dark: 142 71% 45%;
+    --button: 0 0% 9%;
+    --button-dark: 0 0% 9%;
   }
 }
 

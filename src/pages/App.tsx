@@ -68,9 +68,10 @@ function App() {
 
   const NavegacaoBar = () => {
     const screen = useScreenSize();
+  
     if (screen.width > 768) {
       return (
-        <Menubar className='flex align-middle mx-auto border-none w-auto'>
+        <Menubar className='flex align-middle mx-auto border-none w-auto bg-[#1f1f1f]'>
           <MenubarMenu>
             <MenubarTrigger><a href="#apresentacao">Apresentação</a></MenubarTrigger>
             <MenubarTrigger><a href="#experiencia">Experiência</a></MenubarTrigger>
@@ -81,12 +82,12 @@ function App() {
       );
     } else {
       return (
-        <Select>
-          <SelectTrigger className="mt-1 mb-0 w-auto rounded-md">
+        <Select >
+          <SelectTrigger className="mt-1 mb-0 w-auto rounded-md dark:bg-button-dark">
             <VscThreeBars className="w-8 h-8" />
           </SelectTrigger>
           <SelectContent>
-            <SelectGroup className="p-2 border-[0.2px] rounded-md md:mx-auto text-foreground dark:bg-background dark:text-foreground space-y-2">
+            <SelectGroup className="p-2 border-[0.2px] rounded-md md:mx-auto space-y-2 text-white">
               <SelectItem value="apresentacao"><a href="#apresentacao">Apresentação</a></SelectItem>
               <SelectItem value="experiencia"><a href="#experiencia">Experiência</a></SelectItem>
               <SelectItem value="projetos"><a href="#projetos">Projetos</a></SelectItem>
@@ -97,7 +98,7 @@ function App() {
       );
     }
   };
-
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -115,13 +116,13 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme" >
-      <div className="text-foreground dark:bg-background dark:text-foreground max-w-screen-lg mx-auto">
-        <div className='flex w-full justify-between items-center'>
+      <div className="xl:max-w-screen-2xl text-foreground dark:text-foreground mx-auto">
+        <div className='flex justify-between items-center p-3 bg-[#1f1f1f]'>
           <div className="">
             <NavegacaoBar />
           </div>
 
-          <div className="flex space-x-2 items-center ">
+          <div className="flex space-x-2 items-center mr-3">
             <img src="../../public/img/brazil_5111560.png" alt="PT-BR" />
             <Switch
               className={
@@ -137,10 +138,10 @@ function App() {
 
           </div>
         </div>
-        <section className="h-[100vh] m-0 p-0 flex items-center justify-center">
-          <div className="md:container md:mx-auto flex">
-            <img src="" alt="" className="bg-foreground rounded-full w-[300px] h-[300px] p-0 " />
-            <h1 className="text-center text-4xl font-bold text-foreground dark:bg-background dark:text-foreground">
+        <section className="h-[100vh] m-0 p-0 flex items-center justify-center bg-[#1f1f1f]">
+          <div className={useScreenSize().width > 768 ? "mx-auto flex" : 'flex flex-col'}>
+            <img src="" alt="" className="bg-white rounded-full w-[300px] h-[300px] p-0 " />
+            <h1 className="text-center text-4xl font-bold text-[#ffff]">
               <span className="font-bold">Marvin Rocha</span>
             </h1>
           </div>
@@ -163,7 +164,7 @@ function App() {
           <div className="flex justify-center">
             <Carousel className='w-[70%] my-auto dark:bg-popover rounded-lg'>
               <CarouselContent >
-                <CarouselItem className='flex justify-center' >
+                <CarouselItem className='flex flex-col justify-center' >
                   <h1 className=''>AADC (Agência Amazonence de Desenvolvimento Cultural)</h1>
                   <ul>
                     <li>
@@ -173,12 +174,12 @@ function App() {
                     </li>
                     <li>
                       <p className=' text-justify'>
-                        Nome Completo:{FullName}
+                        Desenvolvimento e manutenção de sistemas web e mobile.
                       </p>
                     </li>
                   </ul>
                 </CarouselItem>
-                <CarouselItem>
+                <CarouselItem className='flex flex-col justify-center'>
                   <h1 className=' '>Ferragens Paraiba</h1>
                   <ul>
                     <li>
@@ -194,7 +195,7 @@ function App() {
                     </li>
                   </ul>
                 </CarouselItem>
-                <CarouselItem> <h1 className=' '>ICTS (Instituto Centro de Tecnologia e Software)</h1>
+                <CarouselItem className='flex flex-col justify-center'> <h1 className=' '>ICTS (Instituto Centro de Tecnologia e Software)</h1>
                   <ul>
                     <li>
                       <p className=' text-justify'>
@@ -222,7 +223,7 @@ function App() {
         </section>
 
         <section id="contato" className="flex items-center mt-3">
-          <div className="flex items-center mx-auto md:bottom-0">
+          <div className={useScreenSize().width > 768 ? 'flex items-center mx-auto md:bottom-0' : 'flex items-center justify-center flex-col mx-auto'}>
             <a href={Linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center mr-2 md:text-xm">
               <ImLinkedin className="md:w-8 md:h-8 mr-2" />
               {FullName}
@@ -238,7 +239,7 @@ function App() {
           </div>
         </section>
 
-        <div className={showButton ? 'fixed bottom-4 right-4 z-50 inline-block' : 'none'}>
+        <div className={showButton ? 'fixed bottom-4 right-4 z-50 inline-block animate-bounce' : 'none'}>
           <Button variant="outline" size="icon" className="rounded-full" onClick={scrollToTop}>
             <ChevronUpIcon className="h-4 w-4" />
           </Button>
