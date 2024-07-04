@@ -24,6 +24,7 @@ import {
   SelectGroup,
   SelectItem,
 } from "@radix-ui/react-select";
+import TypeIt from "typeit-react"
 import { ImLinkedin } from "react-icons/im";
 import { VscGithub } from "react-icons/vsc";
 import { TbMailFilled } from "react-icons/tb";
@@ -132,7 +133,7 @@ function App() {
             <NavegacaoBar />
           </div>
 
-          <div className="flex space-x-2 items-center mr-3">
+          <div className="flex space-x-2 items-center ">
             <img src="../../public/img/brazil_5111560.png" alt="PT-BR" />
             <Switch
               className={
@@ -153,7 +154,15 @@ function App() {
             <img src="../../public/img/perfil.png" alt="" className="w-[450px] h-[450px] rounded-sm -z-2 object-contain " />
 
             <h1 className={useScreenSize().width > 768 ? " mt-[70px] text-center text-4xl font-bold text-[#ffff]" : 'text-center text-4xl font-bold text-[#ffff]'}>
-              <span className="font-bold">Marvin Rocha</span>
+              <TypeIt
+
+                options={{
+                  strings: ["Marvin Rocha"],
+                  waitUntilVisible: true,
+                }}
+
+              />
+              {/* <span className="font-bold">Marvin Rocha</span> */}
             </h1>
           </div>
         </section>
@@ -162,6 +171,7 @@ function App() {
             <p className=' w-[90%] text-justify md:text-lg'>
               Sou um desenvolvedor Jr. que adora misturar criatividade com tecnologia para criar algo especial. Trabalhar com HTML, CSS, JavaScript e React Js/Native é como minha segunda natureza, mas o que realmente me motiva é a oportunidade de resolver problemas de maneiras inovadoras. Meu portfólio é como um diário das minhas aventuras de codificação, mostrando não apenas o que construí, mas também a paixão e o empenho que coloquei em cada projeto. Estou sempre disposto a ouvir novas ideias e colaborar em projetos interessantes, então, se você tem algo em mente, vamos conversar! Estou animado para ver onde nossa jornada nos levará.
             </p>
+            
           </div>
         </section>
 
@@ -190,7 +200,6 @@ function App() {
                     <li>
                       <p className=' text-justify'>
                         Desenvolvimento e manutenção de sistemas web e mobile.
-
                       </p>
                     </li>
                     <li>
