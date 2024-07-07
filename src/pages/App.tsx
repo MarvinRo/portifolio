@@ -11,13 +11,6 @@ import { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronUpIcon } from 'lucide-react';
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
   Select,
   SelectTrigger,
   SelectContent,
@@ -35,11 +28,14 @@ import {
 import TypeIt from "typeit-react"
 import { ImLinkedin } from "react-icons/im";
 import { VscGithub } from "react-icons/vsc";
-import { TbMailFilled } from "react-icons/tb";
+import { TbMailFilled,TbBrandReactNative } from "react-icons/tb";
 import { VscThreeBars } from "react-icons/vsc";
 import { BsWhatsapp } from "react-icons/bs";
 import { IoIosSchool } from "react-icons/io";
 import { MdOutlineMoreTime } from "react-icons/md";
+import { FaHtml5, FaCss3Alt, FaReact } from "react-icons/fa";
+import { DiNodejs } from "react-icons/di";
+import { SiJavascript } from "react-icons/si";
 
 function App() {
   const [check, setCheck] = useState(false);
@@ -94,7 +90,6 @@ function App() {
         <Menubar className='flex align-middle mx-auto border-none w-auto bg-[#1f1f1f]'>
           <MenubarMenu>
             <MenubarTrigger><a href="#apresentacao">Apresentação</a></MenubarTrigger>
-            <MenubarTrigger><a href="#experiencia">Experiência</a></MenubarTrigger>
             <MenubarTrigger><a href="#projetos">Projetos</a></MenubarTrigger>
             <MenubarTrigger><a href="#contato">Contato</a></MenubarTrigger>
           </MenubarMenu>
@@ -109,7 +104,6 @@ function App() {
           <SelectContent>
             <SelectGroup className="p-2 border-[0.2px] rounded-md md:mx-auto space-y-2 text-foreground dark:bg-[#1f1f1f] bg-background">
               <SelectItem value="apresentacao"><a href="#apresentacao">Apresentação</a></SelectItem>
-              <SelectItem value="experiencia"><a href="#experiencia">Experiência</a></SelectItem>
               <SelectItem value="projetos"><a href="#projetos">Projetos</a></SelectItem>
               <SelectItem value="contato"><a href="#contato">Contato</a></SelectItem>
             </SelectGroup>
@@ -176,20 +170,14 @@ function App() {
             </h1>
           </div>
         </section>
-        <section id="apresentacao" className=" w-[98%] h-[100vh] flex flex-col items-center justify-center mx-auto">
-          <div className="flex md:mx-auto justify-center align-middle">
-            <p className=' w-[90%] text-justify md:text-lg'>
-              Sou um desenvolvedor Jr. que adora misturar criatividade com tecnologia para criar algo especial. Trabalhar com HTML, CSS, JavaScript e React Js/Native é como minha segunda natureza, mas o que realmente me motiva é a oportunidade de resolver problemas de maneiras inovadoras. Meu portfólio é como um diário das minhas aventuras de codificação, mostrando não apenas o que construí, mas também a paixão e o empenho que coloquei em cada projeto. Estou sempre disposto a ouvir novas ideias e colaborar em projetos interessantes, então, se você tem algo em mente, vamos conversar! Estou animado para ver onde nossa jornada nos levará.
-            </p>
+        <section id="apresentacao" className=" w-[98%] h-[100vh] flex flex-col justify-center mx-auto space-y-4">
+          <h1 className="text-3xl mb-4 ">
+            Apresentação
+          </h1>
 
-          </div>
-        </section>
-
-
-        <section id="experiencia" className="mt-3 h-[100vh] flex flex-col justify-center " >
-          <div className="flex justify-center align-middle items-center space-x-8">
-            <div>
-              <Card >
+          <div className="flex justify-center align-middle items-center space-x-4 mb-4 ">
+            <div className="flex justify-center align-middle items-center">
+              <Card className="  bg-popover dark:bg-popover rounded-lg" >
                 <CardHeader >
                   <CardTitle className="text-foreground flex justify-center"><MdOutlineMoreTime /></CardTitle>
                   <CardDescription className="text-foreground flex justify-center">Experiência</CardDescription>
@@ -202,76 +190,45 @@ function App() {
                 </CardFooter>
               </Card>
             </div>
-            <div>
-            <Card>
+            <div className="flex justify-center align-middle items-center">
+              <Card className="bg-popover dark:bg-popover rounded-lg">
                 <CardHeader>
-                  <CardTitle className=" text-foreground flex justify-center"><IoIosSchool/></CardTitle>
+                  <CardTitle className=" text-foreground flex justify-center"><IoIosSchool /></CardTitle>
                   <CardDescription className="text-foreground flex justify-center">Formação</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-foreground">Facudade do norte (Uninorte)</p>
+                  <p className="text-foreground">Ciência da Computação </p>
                 </CardContent>
                 <CardFooter>
-                  <p className="text-foreground flex justify-center mx-auto">2016-2021</p>
+                  <p className="text-foreground flex justify-center mx-auto">Bacharel</p>
                 </CardFooter>
               </Card>
             </div>
           </div>
-          <div className="ml-5 mb-12">
-            <h1 className="text-3xl">
-              Experiências
-            </h1>
+          <div className="flex md:mx-auto justify-center align-middle">
+            <p className=' w-[90%] text-justify md:text-lg'>
+              Sou um desenvolvedor que adora misturar criatividade com tecnologia para criar algo especial. Trabalhar com HTML, CSS, JavaScript e React Js/Native é como minha segunda natureza, mas o que realmente me motiva é a oportunidade de resolver problemas de maneiras inovadoras. Meu portfólio é como um diário das minhas aventuras de codificação, mostrando não apenas o que construí, mas também a paixão e o empenho que coloquei em cada projeto. Estou sempre disposto a ouvir novas ideias e colaborar em projetos interessantes, então, se você tem algo em mente, vamos conversar! Estou animado para ver onde nossa jornada nos levará.
+            </p>
           </div>
-          <div className="flex justify-center">
-            <Carousel className='w-[70%]  bg-popover dark:bg-popover rounded-lg'>
-              <CarouselContent >
-                <CarouselItem className='flex flex-col justify-center items-center my-6 md:text-xs text-justify space-y-6 mx-2' >
-                  <h1 className=''>AADC (Agência Amazonence de Desenvolvimento Cultural)</h1>
-                  <p className=' text-justify'>
-                    Desenvolvimento e manutenção de sistemas web e mobile.
-                  </p>
-                  <p className=' text-justify'>
-                    Desenvolvimento e manutenção de sistemas web e mobile.
-                  </p>
-                </CarouselItem>
-                <CarouselItem className='flex flex-col justify-center'>
-                  <h1 className=' '>Ferragens Paraiba</h1>
-                  <ul>
-                    <li>
-                      <p className=' text-justify'>
-                        Desenvolvimento e manutenção de sistemas web e mobile.
-                      </p>
-                    </li>
-                    <li>
-                      <p className=' text-justify'>
-                        Desenvolvimento e manutenção de sistemas web e mobile.
-                      </p>
-                    </li>
-                  </ul>
-                </CarouselItem>
-                <CarouselItem className='flex flex-col justify-center'> <h1 className=' '>ICTS (Instituto Centro de Tecnologia e Software)</h1>
-                  <ul>
-                    <li>
-                      <p className=' text-justify'>
-                        Desenvolvimento e manutenção de sistemas web e mobile.
-                      </p>
-                    </li>
-                    <li>
-                      <p className=' text-justify'>
-                        Desenvolvimento e manutenção de sistemas web e mobile.
-                      </p>
-                    </li>
-                  </ul></CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+          <div>
+            <h1 className="text-3xl mb-4 "> Skills</h1>
+            <div className="flex justify-center items-center align-middle space-x-14">
+            <p className=" flex flex-col justify-center  items-center"><FaHtml5 className="md:w-14 md:h-14"/>HTML</p>
+            <p className=" flex flex-col justify-center  items-center"><FaCss3Alt className="md:w-14 md:h-14"/> CSS3</p>
+            <p className=" flex flex-col justify-center  items-center"><FaReact className="md:w-14 md:h-14"/>React JS</p>
+            <DiNodejs className="md:w-[110px] md:h-[110px]"/>
+            <p className=" flex flex-col justify-center  items-center"><SiJavascript className="md:w-14 md:h-14"/> JavaScript</p>
+            <p className=" flex flex-col justify-center  items-center"><TbBrandReactNative className="md:w-14 md:h-14"/>React Native</p>
+            
+            </div>
+          </div>
 
-          </div>
+
         </section>
 
         <section id="projetos" className=" h-[100vh] w-[98%] flex items-center md:mx-auto mt-3">
-          <div className="md:mx-auto flex items-center">
+          <div className="md:mx-auto flex justify-center items-center">\
+            <h1>Projetos</h1>
 
           </div>
         </section>
