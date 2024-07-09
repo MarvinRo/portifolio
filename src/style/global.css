@@ -23,7 +23,7 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --radius: 0.5rem;
-    --button-light: 0 0% 78%;
+    --button-light: 0 0% 98%;
   }
 
   .dark {
@@ -64,6 +64,10 @@
     .dark button {
       background-color: hsl(var(--button-dark));
       color:var(--houver)
+      /* Defina outras propriedades conforme necessário */
+    }
+    .svg {
+      color: hsl(var(--SVG));
       /* Defina outras propriedades conforme necessário */
     }
     
