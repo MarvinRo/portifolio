@@ -120,6 +120,7 @@ Antes de inicializar é preciso configurar o arquivo .env na raiz do projeto
 ### Configure o .env
 Crie um novo arquivo na raiz do seu frontend com o nome '.env'
 ```
+VITE_API_IMG_PROFILE="CAMINHO DA SUA FOTO"
 VITE_API_FULL_NAME = "SEU NOME"
 VITE_API_LIKEDIN_LINK="LINK DE SEU LINKEDIN"
 VITE_API_EMAIL="SEU EMAIL"

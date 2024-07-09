@@ -75,6 +75,8 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+
   const NavegacaoBar = () => {
 
     const handleSelectChange = (value: string) => {
@@ -132,16 +134,16 @@ function App() {
       return (
         <div className="flex  justify-center mx-auto space-x-[90px]">
           <div className="flex justify-center flex-col items-center align-middle space-y-8">
-            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaHtml5 className="md:w-14 md:h-14" />HTML</p>
-            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaCss3Alt className="md:w-14 md:h-14" /> CSS3</p>
-            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiJavascript className="md:w-14 md:h-14" /> JavaScript</p>
-            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaReact className="md:w-14 md:h-14" />React JS</p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaHtml5 className="min-w-[50px] min-h-[50px]" />HTML</p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaCss3Alt className="min-w-[50px] min-h-[50px]" /> CSS3</p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiJavascript className="min-w-[50px] min-h-[50px]" /> JavaScript</p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaReact className="min-w-[50px] min-h-[50px]" />React JS</p>
           </div>
           <div className="flex justify-center flex-col items-center align-middle space-y-8" >
-            <p className="flex flex-col justify-center items-center w-full sm:w-1/2 md:w-auto mt-[-12px]"><DiNodejs className=" min-w-[50px] min-h-[50px]" /></p>
-            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><TbBrandReactNative className="md:w-14 md:h-14" />React Native</p>
-            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiTypescript className="md:w-14 md:h-14" />TypeScript</p>
-            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiSwagger className="md:w-14 md:h-14" />Swagger</p>
+            <p className="flex flex-col justify-center items-center w-full sm:w-1/2 md:w-auto mt-[-12px]"><DiNodejs className=" min-w-[85px] min-h-[85px]" /></p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><TbBrandReactNative className="min-w-[50px] min-h-[50px]" />React Native</p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiTypescript className="min-w-[50px] min-h-[50px]" />TypeScript</p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiSwagger className="min-w-[50px] min-h-[50px]" />Swagger</p>
           </div>
 
 
@@ -197,23 +199,32 @@ function App() {
           <section className="h-[100vh] m-0 p-0 flex ">
 
             <div className={useScreenSize().width > 768 ? " flex my-auto ml-[80px]" : 'flex flex-col mx-auto'}>
-                
-              <img src={IMG_PROFILE} alt="" className="w-[450px] h-[450px] rounded-sm -z-2 object-contain " />
+              <div>
+                <img src={IMG_PROFILE} alt="" className="w-[450px] h-[450px] rounded-sm -z-2 object-contain " />
+              </div>
+              <div className="flex flex-col justify-center">
+                <div>
+                  <h1 className={useScreenSize().width > 768 ? " mt-[70px] text-center text-4xl font-bold " : 'text-center text-4xl font-bold '}>
+                    <TypeIt
 
-              <h1 className={useScreenSize().width > 768 ? " mt-[70px] text-center text-4xl font-bold " : 'text-center text-4xl font-bold '}>
-                <TypeIt
+                      options={{
+                        strings: ["Marvin Rocha ", "Desenvolvedor FrontEnd"],
+                        waitUntilVisible: true,
+                      }}
 
-                  options={{
-                    strings: ["Marvin Rocha ", "Desenvolvedor FrontEnd"],
-                    waitUntilVisible: true,
-                  }}
+                    />
+                  </h1>
+                </div>
 
-                />
-              </h1>
+                <div className="mt-4">
+                  <Button >Download Curriculum</Button>
+                </div>
+              </div>
             </div>
+
           </section>
-          <section id="apresentacao" className=" w-[98%] h-[100vh] flex flex-col justify-center mx-auto space-y-14">
-            <h1 className="text-3xl flex justify-center mb-4 ">
+          <section className=" w-[98%] h-[100vh] flex flex-col justify-center mx-auto space-y-14 mb-3">
+            <h1 id="apresentacao" className="text-3xl flex justify-center mb-4 ">
               Apresentação
             </h1>
             <div className=" md:container flex justify-center align-middle items-center md:space-x-4 mb-4 ">
@@ -255,14 +266,71 @@ function App() {
               <h1 className="flex justify-center text-3xl mb-4 "> Skills</h1>
               <Skills />
             </div>
-
-
           </section>
 
-          <section id="projetos" className=" h-[100vh] w-[98%] flex items-center md:mx-auto mt-3">
-            <div className="md:mx-auto flex justify-center items-center">\
-              <h1>Projetos</h1>
-
+          <section className="  w-[98%] h-[100vh] flex flex-col justify-center">
+            <h1 id="projetos" className="text-3xl flex justify-center">
+              Projetos
+            </h1>
+            <div className=" md:container flex justify-center align-middle items-center space-x-4 mb-4 ">
+              <div className="flex justify-center align-middle items-center">
+                <Card className="  bg-popover dark:bg-popover rounded-lg" >
+                  <CardHeader >
+                    <CardTitle className="text-foreground flex justify-center"><MdOutlineMoreTime /></CardTitle>
+                    <CardDescription className="text-foreground flex justify-center">Experiência</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-foreground flex justify-center">+1 ano</p>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-foreground flex justify-center">Desenvolvedor Frontend</p>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div className="flex justify-center align-middle items-center">
+                <Card className="bg-popover dark:bg-popover rounded-lg">
+                  <CardHeader>
+                    <CardTitle className=" text-foreground flex justify-center"><IoIosSchool /></CardTitle>
+                    <CardDescription className="text-foreground flex justify-center">Formação</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-foreground items-center align-middle">Ciência da Computação </p>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-foreground flex justify-center mx-auto">Bacharel</p>
+                  </CardFooter>
+                </Card>
+              </div>
+            </div>
+            <div className=" md:container flex justify-center align-middle items-center space-x-4 mb-4 ">
+              <div className="flex justify-center align-middle items-center">
+                <Card className="  bg-popover dark:bg-popover rounded-lg" >
+                  <CardHeader >
+                    <CardTitle className="text-foreground flex justify-center"><MdOutlineMoreTime /></CardTitle>
+                    <CardDescription className="text-foreground flex justify-center">Experiência</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-foreground flex justify-center">+1 ano</p>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-foreground flex justify-center">Desenvolvedor Frontend</p>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div className="flex justify-center align-middle items-center">
+                <Card className="bg-popover dark:bg-popover rounded-lg">
+                  <CardHeader>
+                    <CardTitle className=" text-foreground flex justify-center"><IoIosSchool /></CardTitle>
+                    <CardDescription className="text-foreground flex justify-center">Formação</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-foreground items-center align-middle">Ciência da Computação </p>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-foreground flex justify-center mx-auto">Bacharel</p>
+                  </CardFooter>
+                </Card>
+              </div>
             </div>
           </section>
 
