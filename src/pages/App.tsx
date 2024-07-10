@@ -34,9 +34,9 @@ import { VscThreeBars } from "react-icons/vsc";
 import { BsWhatsapp } from "react-icons/bs";
 import { IoIosSchool } from "react-icons/io";
 import { MdOutlineMoreTime } from "react-icons/md";
-import { FaHtml5, FaCss3Alt, FaReact } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaReact, FaFileDownload } from "react-icons/fa";
 import { DiNodejs } from "react-icons/di";
-import { SiJavascript, SiTypescript, SiSwagger } from "react-icons/si";
+import { SiJavascript, SiTypescript, SiSwagger, SiTailwindcss, SiMysql } from "react-icons/si";
 
 function App() {
   const [check, setCheck] = useState(false);
@@ -124,10 +124,13 @@ function App() {
           <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaCss3Alt className="md:w-14 md:h-14" /> CSS3</p>
           <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiJavascript className="md:w-14 md:h-14" /> JavaScript</p>
           <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaReact className="md:w-14 md:h-14" />React JS</p>
+          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiTailwindcss className="min-w-[50px] min-h-[50px]" />Tailwind</p>
+          <SiMysql className="w-full sm:w-1/2  md:w-[110px] md:h-[110px]" />
           <DiNodejs className="w-full sm:w-1/2  md:w-[110px] md:h-[110px]" />
           <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><TbBrandReactNative className="md:w-14 md:h-14" />React Native</p>
           <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiTypescript className="md:w-14 md:h-14" />TypeScript</p>
           <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiSwagger className="md:w-14 md:h-14" />Swagger</p>
+          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiTailwindcss className="min-w-[50px] min-h-[50px]" />Tailwind</p>
         </div>
       )
     } else {
@@ -138,12 +141,16 @@ function App() {
             <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaCss3Alt className="min-w-[50px] min-h-[50px]" /> CSS3</p>
             <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiJavascript className="min-w-[50px] min-h-[50px]" /> JavaScript</p>
             <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><FaReact className="min-w-[50px] min-h-[50px]" />React JS</p>
+            <p className="flex flex-col justify-center items-center w-full sm:w-1/2 md:w-auto mt-[-12px]"><SiMysql className=" min-w-[85px] min-h-[85px]" /></p>
+
           </div>
           <div className="flex justify-center flex-col items-center align-middle space-y-8" >
+
             <p className="flex flex-col justify-center items-center w-full sm:w-1/2 md:w-auto mt-[-12px]"><DiNodejs className=" min-w-[85px] min-h-[85px]" /></p>
             <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><TbBrandReactNative className="min-w-[50px] min-h-[50px]" />React Native</p>
             <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiTypescript className="min-w-[50px] min-h-[50px]" />TypeScript</p>
             <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiSwagger className="min-w-[50px] min-h-[50px]" />Swagger</p>
+            <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center"><SiTailwindcss className="min-w-[50px] min-h-[50px]" />Tailwind</p>
           </div>
 
 
@@ -171,7 +178,7 @@ function App() {
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme" >
       <div className="xl:max-w-screen-2xl text-foreground dark:text-foreground mx-auto z-10">
         <div className="relative">
-          <div className="absolute inset-0 z-[-10]">
+          <div className="absolute h-[100%] inset-0 z-[-10]">
             <AnimatedBackground />
           </div>
 
@@ -204,20 +211,22 @@ function App() {
               </div>
               <div className="flex flex-col justify-center">
                 <div>
-                  <h1 className={useScreenSize().width > 768 ? " mt-[70px] text-center text-4xl font-bold " : 'text-center text-4xl font-bold '}>
+                  <h1 className={useScreenSize().width > 768 ? " mt-[70px] text-left text-4xl font-bold " : 'text-center text-4xl font-bold '}>
                     <TypeIt
 
                       options={{
                         strings: ["Marvin Rocha ", "Desenvolvedor FrontEnd"],
                         waitUntilVisible: true,
+
                       }}
 
                     />
                   </h1>
                 </div>
 
-                <div className="mt-4">
-                  <Button >Download Curriculum</Button>
+                <div className="mt-4 flex space-x-4">
+                  <Button className="border-2 border-foreground rounded-md md:mx-auto text-foreground bg-popover hover:bg-hover"><FaFileDownload className="mr-2" />Download Curriculum</Button>
+                  <Button className="border-2 border-foreground rounded-md md:mx-auto text-foreground bg-popover hover:bg-hover"><FaFileDownload className="mr-2" />Download Curriculum</Button>
                 </div>
               </div>
             </div>
