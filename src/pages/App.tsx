@@ -292,7 +292,8 @@ function App() {
           <Carousel setApi={setApi} className=" w-full">
             <CarouselContent>
               {Array.from({ length: 1 }).map((_, index) => (
-                <><CarouselItem key={index}>
+                <>
+                <CarouselItem key={index}>
                   <div className="flex justify-center items-center">
                     <Card className="bg-popover dark:bg-popover rounded-lg w-full h-auto p-4">
                       <CardHeader>
@@ -316,13 +317,83 @@ function App() {
                       </CardFooter>
                     </Card>
                   </div>
-                </CarouselItem><CarouselItem key={index}>
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-
+                </CarouselItem>
+                <CarouselItem key={index}>
+                  <div className="flex justify-center items-center">
+                    <Card className="bg-popover dark:bg-popover rounded-lg w-full h-auto p-4">
+                      <CardHeader>
+                        <CardTitle className=" text-foreground flex justify-center">Site Iraene Cortinas</CardTitle>
+                        <CardDescription className="text-foreground flex justify-center"><img className=" rounded-md w-auto h-auto" src="../../public/img/image.png" alt="" /></CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-foreground items-center align-middle">Site criado para fazer a apresentação de serviço e trabalhos realizados onde o intuito é o contato com o prestador de serviço. </p>
                       </CardContent>
+                      <CardFooter className="flex flex-col space-y-2 ">
+                        <h2 className=" flex align-middle text-foreground">Tecnologias usadas:</h2>
+                        <div className="flex space-x-2">
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaHtml5 className="min-w-[15px] min-h-[15px] text-foreground" />HTML</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaCss3Alt className="min-w-[15px] min-h-[15px] text-foreground" /> CSS3</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiJavascript className="min-w-[15px] min-h-[15px] text-foreground" /> JavaScript</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiTypescript className="min-w-[15px] min-h-[15px] text-foreground" />TypeScript</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaReact className="min-w-[15px] min-h-[15px] text-foreground" />ReactJS</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiTailwindcss className="min-w-[15px] min-h-[15px] text-foreground" />Tailwind</p>
+
+                        </div>
+                      </CardFooter>
                     </Card>
-                  </CarouselItem></>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={index}>
+                  <div className="flex justify-center items-center">
+                    <Card className="bg-popover dark:bg-popover rounded-lg w-full h-auto p-4">
+                      <CardHeader>
+                        <CardTitle className=" text-foreground flex justify-center">Site Iraene Cortinas</CardTitle>
+                        <CardDescription className="text-foreground flex justify-center"><img className=" rounded-md w-auto h-auto" src="../../public/img/image.png" alt="" /></CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-foreground items-center align-middle">Site criado para fazer a apresentação de serviço e trabalhos realizados onde o intuito é o contato com o prestador de serviço. </p>
+                      </CardContent>
+                      <CardFooter className="flex flex-col space-y-2 ">
+                        <h2 className=" flex align-middle text-foreground">Tecnologias usadas:</h2>
+                        <div className="flex space-x-2">
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaHtml5 className="min-w-[15px] min-h-[15px] text-foreground" />HTML</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaCss3Alt className="min-w-[15px] min-h-[15px] text-foreground" /> CSS3</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiJavascript className="min-w-[15px] min-h-[15px] text-foreground" /> JavaScript</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiTypescript className="min-w-[15px] min-h-[15px] text-foreground" />TypeScript</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaReact className="min-w-[15px] min-h-[15px] text-foreground" />ReactJS</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiTailwindcss className="min-w-[15px] min-h-[15px] text-foreground" />Tailwind</p>
+
+                        </div>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem key={index}>
+                  <div className="flex justify-center items-center">
+                    <Card className="bg-popover dark:bg-popover rounded-lg w-full h-auto p-4">
+                      <CardHeader>
+                        <CardTitle className=" text-foreground flex justify-center">Site Iraene Cortinas</CardTitle>
+                        <CardDescription className="text-foreground flex justify-center"><img className=" rounded-md w-auto h-auto" src="../../public/img/image.png" alt="" /></CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-foreground items-center align-middle">Site criado para fazer a apresentação de serviço e trabalhos realizados onde o intuito é o contato com o prestador de serviço. </p>
+                      </CardContent>
+                      <CardFooter className="flex flex-col space-y-2 ">
+                        <h2 className=" flex align-middle text-foreground">Tecnologias usadas:</h2>
+                        <div className="flex space-x-2">
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaHtml5 className="min-w-[15px] min-h-[15px] text-foreground" />HTML</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaCss3Alt className="min-w-[15px] min-h-[15px] text-foreground" /> CSS3</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiJavascript className="min-w-[15px] min-h-[15px] text-foreground" /> JavaScript</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiTypescript className="min-w-[15px] min-h-[15px] text-foreground" />TypeScript</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><FaReact className="min-w-[15px] min-h-[15px] text-foreground" />ReactJS</p>
+                          <p className=" flex flex-col justify-center w-full sm:w-1/2 md:w-auto items-center text-foreground"><SiTailwindcss className="min-w-[15px] min-h-[15px] text-foreground" />Tailwind</p>
+
+                        </div>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </>
               ))}
             </CarouselContent>
           </Carousel>
@@ -354,7 +425,7 @@ function App() {
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme" >
       <div className="max-w-screen-2xl min-w-screen-[500px] text-foreground dark:text-foreground mx-auto z-10">
         <div className="relative">
-          <div className="fixed h-[100%] my-auto inset-0 z-[-10]">
+          <div className="fixed my-auto inset-0 scale-150 z-[-10]">
             <AnimatedBackground />
           </div>
 
@@ -419,7 +490,7 @@ function App() {
             <h1 id="apresentacao" className="text-3xl flex justify-center mb-4">
               Apresentação
             </h1>
-            <div className="md:container flex justify-center items-center md:space-x-4 mb-4">
+            <div className={useScreenSize().width > 767 ? "flex justify-center space-x-4 items-center": "flex justify-center space-x-4 mx-auto w-auto "}>
               <div className="flex justify-center items-center">
                 <Card className="bg-popover dark:bg-popover rounded-lg">
                   <CardHeader>
@@ -452,7 +523,7 @@ function App() {
                     <p className="text-foreground text-center">Ciência da Computação</p>
                   </CardContent>
                   <CardFooter>
-                    <p className="text-foreground flex justify-center">Bacharel</p>
+                    <p className="flex justify-center text-foreground mx-auto">Bacharel</p>
                   </CardFooter>
                 </Card>
               </div>
