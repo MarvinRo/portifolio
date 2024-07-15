@@ -141,9 +141,9 @@ Após instalar os pacotes você estará pronto para executar o projeto
 Execute o comando a seguir para rodar o frontend:
 
 ```
-npm run start
+npm run dev
 ```
 ou
 ```
-yarn start
+yarn dev
 ```
