@@ -11,9 +11,28 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
       screens: {
-        "2xl": "1400px",
+        'sm': {'min': '640px', 'max': '767px'},
+        // => @media (min-width: 640px and max-width: 767px) { ... }
+  
+        'md': {'min': '768px', 'max': '1023px'},
+        // => @media (min-width: 768px and max-width: 1023px) { ... }
+  
+        'lg': {'min': '1024px', 'max': '1279px'},
+        // => @media (min-width: 1024px and max-width: 1279px) { ... }
+  
+        'xl': {'min': '1280px', 'max': '1535px'},
+        // => @media (min-width: 1280px and max-width: 1535px) { ... }
+  
+        '2xl': {'min': '1536px'},
+        // => @media (min-width: 1536px) { ... }
       },
     },
     extend: {
@@ -21,8 +40,8 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -61,10 +80,6 @@ module.exports = {
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
         },
       },
       animation: {

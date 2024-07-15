@@ -11,8 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
 
 # Editor directories and files
+#public/img/perfil.png
+#public/img/SVG.svg
 .vscode/*
 !.vscode/extensions.json
 .idea
